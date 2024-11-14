@@ -19,7 +19,9 @@ header {
 
 ul {
   list-style: none;
+
 }
+
 
 .logo-name {
   display: flex;
@@ -78,6 +80,17 @@ body {
   flex-direction: column;
 }
 
+
+.item-grid-resenas {
+  font-size: medium;
+  border: 1px solid black;
+  border-left-color: white;
+  border-right-color: white;
+  text-align: center;
+  padding: 1rem 0.1rem 1rem 0.5rem;
+}
+
+
 .grid-image {
   width: 100%;
   height: auto;
@@ -127,7 +140,7 @@ body {
 
 form {
   display: block;
-  padding: 5% 20%;
+  padding: 2% 16%;
 }
 
 label {
@@ -162,7 +175,7 @@ button[type=submit] {
   font-size: medium;
 }
 
-.productos-title {
+.section-title {
   display: flex;
   justify-content: center;
 }
@@ -173,6 +186,7 @@ button[type=submit] {
   width: 100%;
   justify-content: space-around;
   border-radius: 10px;
+  margin-top: 3rem;
 }
 
 .footer-container {
@@ -224,6 +238,7 @@ button[type=submit] {
 
   ul {
     padding: 0;
+    display: flex;
   }
 
   .logo-name {
