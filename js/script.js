@@ -66,7 +66,7 @@ function renderProductos() {
     const title = document.createElement('h3');
     title.classList.add('grid-title');
     const button = document.createElement('button');
-    button.textContent = "Mostrar Descripcion";
+    button.textContent = "Mas información";
 
     const description = document.createElement('p');
     description.classList.add('grid-description');
