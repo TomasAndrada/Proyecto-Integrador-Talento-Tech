@@ -3,55 +3,55 @@ productos = [
     "id": 1,
     "image": "img/99120101243_MarneusCalgar01.jpg",
     "title": "Marneus Calgar",
-    "description": "The indomitable Chapter Master of the Ultramarines, Marneus Calgar is a legendary warrior and tactician. Clad in the mighty Mark X Gravis Armor, he leads his forces with unmatched strategic brilliance and crushing power."
+    "description": "El indomable Maestro de Capítulo de los Ultramarines, Marneus Calgar, es un guerrero y estratega legendario. Con su poderosa armadura Gravis de la marca X, lidera a sus fuerzas con una brillantez táctica inigualable y un poder destructor."
   },
   {
     "id": 2,
     "image": "img/60010199067_WH40kUltimateStarterSet2.jpg",
-    "title": "Combat Patrol - Space Marines",
-    "description": "A perfect starting point for any Space Marine collection, this Combat Patrol set includes a variety of units to create a well-rounded and potent force, ideal for both beginner and veteran players."
+    "title": "Patrulla de Combate - Marines Espaciales",
+    "description": "Un punto de partida perfecto para cualquier colección de Marines Espaciales. Este set de Patrulla de Combate incluye una variedad de unidades que permiten crear una fuerza bien equilibrada, ideal tanto para jugadores principiantes como veteranos."
   },
   {
     "id": 3,
     "image": "img/99120101177_TriumvirateofthePrimarch02.jpg",
     "title": "Roboute Guilliman",
-    "description": "The Primarch of the Ultramarines, Roboute Guilliman is a strategic genius and unparalleled leader. As the Lord Commander of the Imperium, he stands as one of the greatest champions of humanity."
+    "description": "El Primarca de los Ultramarines, Roboute Guilliman, es un genio estratégico y líder incomparable. Como Comandante Supremo del Imperio, Guilliman es uno de los campeones más grandes de la humanidad."
   },
   {
     "id": 4,
     "image": "img/60010199057_LeviathanEXTRA3.jpg",
-    "title": "Librarian in Gravis Armor",
-    "description": "This powerful psyker in Gravis Armor combines the strength of the Space Marines with the mystic powers of the Warp. The Librarian’s psychic abilities can devastate enemies and protect the forces of the Imperium."
+    "title": "Librarius en Armadura Gravis",
+    "description": "Este poderoso psyker en armadura Gravis combina la fuerza de los Marines Espaciales con los poderes místicos del Warp. Las habilidades psíquicas del Librarius pueden devastar a los enemigos y proteger a las fuerzas del Imperio."
   },
   {
     "id": 5,
     "image": "img/99120101190_PrimarisIntercessors01.jpg",
-    "title": "Primaris Intercessors",
-    "description": "Primaris Intercessors are the backbone of the Space Marine Chapters, equipped with bolt rifles and advanced armor. They are versatile, steadfast warriors capable of holding the line or striking decisively."
+    "title": "Intercesores Primaris",
+    "description": "Los Intercesores Primaris son la columna vertebral de los Capítulos de Marines Espaciales, equipados con rifles de asalto y armaduras avanzadas. Son guerreros versátiles y firmes, capaces de mantener la línea o de atacar con precisión mortal."
   },
   {
     "id": 6,
     "image": "img/99070101048_SMCaptainMasterCraftedBoltRifleLead.jpg",
-    "title": "Space Marine Captain",
-    "description": "A Space Marine Captain is a seasoned leader, known for their mastery of combat and tactics. Armed with a master-crafted bolt rifle and capable of inspiring their squad to greatness, they are a fearsome presence on the battlefield."
+    "title": "Capitán Marine Espacial",
+    "description": "El Capitán de los Marines Espaciales es un líder experimentado, conocido por su maestría en combate y tácticas. Armado con un rifle de asalto de calidad artesanal y capaz de inspirar a su escuadra hacia la grandeza, es una presencia temible en el campo de batalla."
   },
   {
     "id": 7,
     "image": "img/99120101254_UMChiefLibrarian01.jpg",
-    "title": "Librarian",
-    "description": "Librarians are psykers of the Adeptus Astartes, wielding potent powers to defend the Imperium from both physical and psychic threats. This powerful figure uses their psychic might to turn the tide of battle."
+    "title": "Librarius",
+    "description": "Los Librarius son psykers de los Adeptus Astartes, que emplean poderes psíquicos para defender al Imperio de amenazas tanto físicas como psíquicas. Esta poderosa figura utiliza su poder mental para cambiar el curso de la batalla."
   },
   {
     "id": 8,
     "image": "img/99120101289_UMCptVentrisLead.jpg",
     "title": "Uriel Ventris",
-    "description": "Captain Uriel Ventris of the Ultramarines is a hero of the Imperium, known for his unwavering loyalty and tactical acumen. His leadership has seen him face down some of the greatest threats to humanity."
+    "description": "El Capitán Uriel Ventris de los Ultramarines es un héroe del Imperio, conocido por su lealtad inquebrantable y su aguda táctica. Su liderazgo lo ha llevado a enfrentarse a algunas de las mayores amenazas de la humanidad."
   },
   {
     "id": 9,
     "image": "img/99120101260_SMPrimarisEliminators01.jpg",
-    "title": "Primaris Eliminators",
-    "description": "Primaris Eliminators are elite sniper specialists, trained to take out high-priority targets with deadly precision. Armed with advanced long-range weaponry, they are the masters of stealth and lethal accuracy."
+    "title": "Eliminadores Primaris",
+    "description": "Los Eliminadores Primaris son especialistas en francotiradores de élite, entrenados para eliminar objetivos de alto valor con mortal precisión. Armados con avanzadas armas de largo alcance, son los maestros del sigilo y la precisión letal."
   }
 ]
 
