@@ -64,6 +64,12 @@ productos = [
   }
 ];
 
+function logProdcutos() {
+  productos.find(producto => {
+    console.log(producto);
+  })
+}
+
 function renderProductos() {
   const grid_body = document.querySelector(".grid-body");
 
@@ -151,7 +157,6 @@ function addToCart(producto) {
   displayCart();
 }
 
-// Function to remove a product from the cart
 function removeFromCart(index) {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart.splice(index, 1); // Remove the item at the specified index
@@ -181,82 +186,140 @@ function displayCart() {
   const cartContainer = document.querySelector(".cart-container");
   cartContainer.innerHTML = "";
 
-  const closeCartButton = document.createElement('button');
-  closeCartButton.textContent = "X";
-  closeCartButton.addEventListener('click', () => {
-    document.querySelector(".cart-container").style.display = "none";
-  })
-  cartContainer.appendChild(closeCartButton);
+
+  const cartTitle = document.createElement('h3');
+  cartTitle.innerText = "Carrito de compras"
+  cartContainer.appendChild(cartTitle);
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   if (cart.length === 0) {
     cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
+    cartContainer.appendChild(cartTitle);
     return;
   }
 
+  let total = 0;
+
   cart.forEach((item, index) => {
+
     const cartItem = document.createElement('div');
     cartItem.classList.add('cart-item');
 
-    const itemTitle = document.createElement('h4');
+    const itemTitle = document.createElement('p');
+    itemTitle.classList.add('cart-item-title');
     itemTitle.textContent = item.title;
 
     const itemPrice = document.createElement('p');
-    itemPrice.textContent = `$${(item.price * item.quantity).toFixed(2)} (${item.quantity})`;
+    itemPrice.classList.add('cart-item-price');
+    itemPrice.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
+
+    const cartQuantity = document.createElement('div');
+    cartQuantity.classList.add('cart-item-quantity');
 
     const increaseButton = document.createElement('button');
+    increaseButton.classList.add('cart-button');
     increaseButton.textContent = "+";
     increaseButton.addEventListener('click', () => {
       updateQuantity(index, 1);
     });
 
+    const itemQuantity = document.createElement('span');
+    itemQuantity.innerText = item.quantity;
+
     const decreaseButton = document.createElement('button');
+    decreaseButton.classList.add('cart-button');
     decreaseButton.textContent = "-";
     decreaseButton.addEventListener('click', () => {
       updateQuantity(index, -1);
     });
 
     const removeButton = document.createElement('button');
-    removeButton.textContent = "Eliminar";
+    removeButton.classList.add('cart-item-remove');
+    const removeButtonImage = document.createElement('svg');
+    removeButtonImage.classList.add('cart-button');
+    removeButtonImage.innerHTML = "<svg fill=\"currentColor\" height=\"1em\" stroke=\"currentColor\" stroke-width=\"0\" viewBox=\"0 0 448 512\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M135.2 17.7 128 32H32C14.3 32 0 46.3 0 64s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32l21.2 339c1.6 25.3 22.6 45 47.9 45h245.8c25.3 0 46.3-19.7 47.9-45L416 128z\" stroke=\"none\"/></svg>"
+    removeButton.appendChild(removeButtonImage);
     removeButton.addEventListener('click', () => {
       removeFromCart(index);
     });
 
-    cartItem.appendChild(itemTitle);
-    cartItem.appendChild(itemPrice);
-    cartItem.appendChild(decreaseButton);
-    cartItem.appendChild(increaseButton);
-    cartItem.appendChild(removeButton);
+    const itemImage = document.createElement('img');
+    itemImage.src = item.image;
+    itemImage.classList.add('img-cart');
+
+    const cartItemDetails = document.createElement('div');
+    cartItemDetails.classList.add('cart-item-details');
+
+    cartItem.appendChild(itemImage);
+    cartItemDetails.appendChild(itemTitle);
+    cartItemDetails.appendChild(itemPrice);
+    cartItem.appendChild(cartItemDetails)
+    cartQuantity.appendChild(decreaseButton);
+    cartQuantity.appendChild(itemQuantity);
+    cartQuantity.appendChild(increaseButton);
+    cartItemDetails.appendChild(cartQuantity);
+    cartQuantity.appendChild(removeButton);
     cartContainer.appendChild(cartItem);
+
+    total += item.price * item.quantity;
   });
 
+  const totalContainer = document.createElement('div');
+  totalContainer.classList.add('cart-total');
+
+  const totalLabel = document.createElement('p');
+  totalLabel.textContent = "Total:";
+  totalLabel.style.fontWeight = "bold";
+
+  const totalAmount = document.createElement('p');
+  totalAmount.textContent = `$${total.toFixed(2)}`;
+  totalAmount.style.fontWeight = "bold";
+
+  totalContainer.appendChild(totalLabel);
+  totalContainer.appendChild(totalAmount);
+  cartContainer.appendChild(totalContainer);
+
   const clearCartButton = document.createElement('button');
+  clearCartButton.classList.add('cart-button');
   clearCartButton.textContent = "Vaciar carrito";
   clearCartButton.addEventListener('click', clearCart);
-  cartContainer.appendChild(clearCartButton);
 
   const checkoutButton = document.createElement('button');
+  checkoutButton.classList.add('cart-button');
   checkoutButton.textContent = "Finalizar compra";
   checkoutButton.addEventListener('click', () => {
     alert("Gracias por su compra");
     clearCart();
   });
-  cartContainer.appendChild(checkoutButton);
 
+  const endCartContainer = document.createElement('div');
+  endCartContainer.classList.add('end-cart');
+  endCartContainer.appendChild(clearCartButton);
+  endCartContainer.appendChild(checkoutButton);
+  cartContainer.appendChild(endCartContainer);
 }
+
+
+const cartContainer = document.querySelector(".cart-container");
 
 function toggleCart() {
   const cartContainer = document.querySelector(".cart-container");
-  if (cartContainer.style.display === "none" || !cartContainer.style.display) {
-    cartContainer.style.display = "block";
+  if (cartContainer.classList.contains("open")) {
+    cartContainer.classList.remove("open");
   } else {
-    cartContainer.style.display = "none";
+    cartContainer.classList.add("open");
   }
 }
 
 const toggleCartButton = document.querySelector(".cart-button");
 toggleCartButton.addEventListener('click', toggleCart);
 
+document.addEventListener("click", (event) => {
+  if (!cartContainer.contains(event.target) && !event.target.classList.contains("cart-button")) {
+    cartContainer.classList.remove("open");
+  }
+});
 
+logProdcutos();
 renderProductos();
 displayCart();
