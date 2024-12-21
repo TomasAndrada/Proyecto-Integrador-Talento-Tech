@@ -191,10 +191,14 @@ function displayCart() {
   cartTitle.innerText = "Carrito de compras"
   cartContainer.appendChild(cartTitle);
 
+  const textEmptyCart = document.createElement('p');
+  textEmptyCart.innerHTML = "<p>El carrito está vacío.</p>";
+
+
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   if (cart.length === 0) {
-    cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
     cartContainer.appendChild(cartTitle);
+    cartContainer.appendChild(textEmptyCart);
     return;
   }
 
